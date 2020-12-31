@@ -103,6 +103,9 @@ class _HomePageState extends State<HomePage> {
                     separatorBuilder: (context, index) => SizedBox(width: 8.0),
                   ),
                 ),
+                SizedBox(
+                  height: 70.0,
+                )
               ],
             ),
           ),
@@ -128,8 +131,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         */
-
       bottomSheet: BottomNavigationBar(
+        selectedItemColor: Colors.blueGrey,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.message_rounded),
@@ -145,6 +148,7 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
+      resizeToAvoidBottomInset: true,
     );
   }
 }
