@@ -22,7 +22,7 @@ class _SignUpFormState extends State<SignUpForm> {
           Row(
             children: <Text>[
               Text(
-                'Sign',
+                'Sign ',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
@@ -41,7 +41,10 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20.0),
-            child: Text('Please enter your credentials to proceed'),
+            child: Text(
+              'Please enter your credentials to proceed',
+              style: TextStyle(color: Colors.black45),
+            ),
           ),
           Form(
             key: _formKey,
@@ -95,20 +98,25 @@ class _SignUpFormState extends State<SignUpForm> {
                 SizedBox(
                   height: 20.0,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: SizedBox(
-                    height: 50.0,
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      style: ButtonStyle(),
-                      onPressed: () {
-                        print('Yeah');
-                      },
-                      child: Text('SIGN IN'),
+                Container(
+                  height: 50.0,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(8.0),
                     ),
                   ),
-                ),
+                  child: TextButton(
+                    onPressed: () {
+                      print('pressed me');
+                    },
+                    child: Text(
+                      'SIGN IN',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                )
               ],
             ),
           ),
