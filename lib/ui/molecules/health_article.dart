@@ -8,7 +8,7 @@ class HealthArticle extends StatelessWidget {
       },
       child: Container(
         height: 150.0,
-        width: 400.0,
+        width: 350.0,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10.0)),
           color: Colors.blue,
@@ -26,7 +26,7 @@ class HealthArticle extends StatelessWidget {
                     style: TextStyle(color: Colors.white),
                   ),
                   Container(
-                    width: 300.0,
+                    width: 250.0,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
