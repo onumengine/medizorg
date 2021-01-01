@@ -104,7 +104,7 @@ class _SignUpFormState extends State<SignUpForm> {
                   decoration: BoxDecoration(
                     color: Colors.red,
                     borderRadius: BorderRadius.all(
-                      Radius.circular(8.0),
+                      Radius.circular(16.0),
                     ),
                   ),
                   child: TextButton(

@@ -26,7 +26,7 @@ class EditText extends StatelessWidget {
           labelText: this.labelText,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.all(
-              Radius.circular(8.0),
+              Radius.circular(16.0),
             ),
             borderSide: BorderSide(
               color: Colors.black12,
