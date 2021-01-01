@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medizorg/ui/organisms/welcome_div.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,39 +16,12 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Welcome',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                    fontSize: 30.0,
-                  ),
-                ),
+              SizedBox(
+                height: 30.0,
               ),
-              Row(
-                children: <Widget>[
-                  Text(
-                    'to ',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                      fontSize: 30.0,
-                    ),
-                  ),
-                  Text(
-                    'Medizorg',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blue,
-                      fontSize: 30.0,
-                    ),
-                  ),
-                ],
-              ),
-              Text(
-                'Official Public Service Announcement on Coronavirus from the World Health Organization',
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: WelcomeDiv(),
               ),
               Expanded(
                 child: Stack(
