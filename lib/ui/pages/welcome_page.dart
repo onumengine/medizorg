@@ -29,13 +29,24 @@ class _WelcomePageState extends State<WelcomePage> {
                   children: <Widget>[
                     Image.asset('lib/assets/doctor.png'),
                     Positioned(
-                      bottom: 0.0,
-                      right: 0.0,
-                      child: IconButton(
-                        icon: Icon(Icons.arrow_forward_rounded),
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/sign_in_page');
-                        },
+                      bottom: -15.0,
+                      right: -15.0,
+                      child: Container(
+                        height: 80.0,
+                        width: 80.0,
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          shape: BoxShape.circle,
+                        ),
+                        child: GestureDetector(
+                          child: Icon(
+                            Icons.arrow_forward_rounded,
+                            color: Colors.white,
+                          ),
+                          onTap: () {
+                            Navigator.of(context).pushNamed('/sign_in_page');
+                          },
+                        ),
                       ),
                     )
                   ],

@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
           height: MediaQuery.of(context).size.height,
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 12.0),
-            child: Column(
+            child: ListView(
               children: <Widget>[
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -38,6 +38,9 @@ class _HomePageState extends State<HomePage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                ),
+                SizedBox(
+                  height: 12.0,
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
@@ -75,6 +78,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
+                SizedBox(height: 12.0),
                 Container(
                   height: 200.0,
                   child: ListView.separated(
