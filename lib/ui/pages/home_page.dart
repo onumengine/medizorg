@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medizorg/ui/molecules/search_bar.dart';
 
 class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
@@ -24,6 +25,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
+                SearchBar(),
               ],
             ),
           ),
