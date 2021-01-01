@@ -51,12 +51,26 @@ class _HomePageState extends State<HomePage> {
                     crossAxisSpacing: 8.0,
                     crossAxisCount: 3,
                     children: <Widget>[
-                      ServiceItem(),
-                      ServiceItem(),
-                      ServiceItem(),
-                      ServiceItem(),
-                      ServiceItem(),
-                      ServiceItem(),
+                      ServiceItem(
+                        iconData: Icons.mail_outline_rounded,
+                        text: 'Consult',
+                      ),
+                      ServiceItem(
+                          iconData: Icons.message_rounded, text: 'Chat'),
+                      ServiceItem(
+                        iconData: Icons.video_call_rounded,
+                        text: 'Virtual consult',
+                      ),
+                      ServiceItem(
+                        iconData: Icons.book_online_rounded,
+                        text: 'Schedule',
+                      ),
+                      ServiceItem(
+                        iconData: Icons.receipt_rounded,
+                        text: 'My purchases',
+                      ),
+                      ServiceItem(
+                          iconData: Icons.notes_rounded, text: 'My records'),
                     ],
                   ),
                 ),
