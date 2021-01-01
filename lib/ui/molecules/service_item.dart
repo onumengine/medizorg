@@ -11,13 +11,12 @@ class ServiceItem extends StatelessWidget {
           Radius.circular(8.0),
         ),
       ),
-      child: Center(
-        child: Column(
-          children: <Widget>[
-            Icon(Icons.contact_mail_outlined),
-            Text('Doctor'),
-          ],
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Icon(Icons.contact_mail_outlined),
+          Text('Doctor'),
+        ],
       ),
     );
   }
