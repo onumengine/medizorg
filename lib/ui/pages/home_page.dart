@@ -108,6 +108,27 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+      /*
+        bottomSheet: BottomAppBar(
+          child: TabBar(
+            indicatorColor: Colors.red,
+            labelColor: Colors.black54,
+            unselectedLabelColor: Colors.black26,
+            tabs: <Tab>[
+              Tab(
+                icon: Icon(Icons.message_rounded),
+              ),
+              Tab(
+                icon: Icon(Icons.calendar_today_rounded),
+              ),
+              Tab(
+                icon: Icon(Icons.contact_page_rounded),
+              ),
+            ],
+          ),
+        ),
+        */
+
       bottomSheet: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
