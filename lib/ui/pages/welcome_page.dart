@@ -23,6 +23,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: WelcomeDiv(),
               ),
+              SizedBox(height: 10.0),
               Expanded(
                 child: Stack(
                   children: <Widget>[

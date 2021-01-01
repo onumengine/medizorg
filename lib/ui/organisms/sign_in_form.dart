@@ -90,7 +90,7 @@ class _SignInFormState extends State<SignInForm> {
                   height: 50.0,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                    color: Colors.red,
+                    color: Colors.blue,
                     borderRadius: BorderRadius.all(
                       Radius.circular(16.0),
                     ),
