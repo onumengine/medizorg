@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medizorg/ui/molecules/health_article.dart';
 import 'package:medizorg/ui/molecules/search_bar.dart';
 import 'package:medizorg/ui/molecules/service_item.dart';
 
@@ -74,7 +75,16 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-                Container(),
+                Container(
+                  height: 200.0,
+                  child: ListView.separated(
+                    itemCount: 5,
+                    addAutomaticKeepAlives: false,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) => HealthArticle(),
+                    separatorBuilder: (context, index) => SizedBox(width: 8.0),
+                  ),
+                ),
               ],
             ),
           ),
