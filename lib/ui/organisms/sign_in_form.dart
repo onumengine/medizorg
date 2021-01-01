@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:medizorg/ui/molecules/edit_text.dart';
 
-class SignUpForm extends StatefulWidget {
-  _SignUpFormState createState() => _SignUpFormState();
+class SignInForm extends StatefulWidget {
+  _SignInFormState createState() => _SignInFormState();
 }
 
-class _SignUpFormState extends State<SignUpForm> {
+class _SignInFormState extends State<SignInForm> {
   final _formKey = GlobalKey<FormState>();
   final _emailFieldKey = GlobalKey<FormState>();
   final _passwordFieldKey = GlobalKey<FormState>();
@@ -72,25 +72,13 @@ class _SignUpFormState extends State<SignUpForm> {
                   },
                 ),
                 SizedBox(
-                  height: 20.0,
-                ),
-                EditText(
-                  key: _confirmPasswordFieldKey,
-                  obscureText: true,
-                  autocorrect: false,
-                  labelText: 'Confirm password',
-                  validator: (String value) {
-                    return (value.isEmpty)
-                        ? 'Please enter your password'
-                        : null;
-                  },
+                  height: 4.0,
                 ),
                 Align(
                   alignment: Alignment.centerRight,
                   child: Text(
                     'Forgot Password?',
                     style: TextStyle(
-                      color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -109,14 +97,34 @@ class _SignUpFormState extends State<SignUpForm> {
                   ),
                   child: TextButton(
                     onPressed: () {
-                      print('pressed me');
+                      Navigator.of(context).pushNamed('/home_page');
                     },
                     child: Text(
                       'SIGN IN',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
-                )
+                ),
+                SizedBox(
+                  height: 16.0,
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      'Don\'t have an account?',
+                      style: TextStyle(color: Colors.black38),
+                    ),
+                    FlatButton(
+                      onPressed: null,
+                      child: Text(
+                        'SIGN UP',
+                        style: TextStyle(color: Colors.blue),
+                      ),
+                    )
+                  ],
+                ),
               ],
             ),
           ),
