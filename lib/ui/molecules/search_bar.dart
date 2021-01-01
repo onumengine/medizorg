@@ -21,6 +21,9 @@ class SearchBar extends StatelessWidget {
               textAlignVertical: TextAlignVertical.bottom,
               decoration: InputDecoration.collapsed(
                 hintText: 'Search doctors',
+                hintStyle: TextStyle(
+                  color: Colors.black26,
+                ),
               ),
             ),
           ),
