@@ -6,8 +6,17 @@ class ServiceItem extends StatelessWidget {
       width: 100.0,
       height: 100.0,
       decoration: BoxDecoration(
+        color: Colors.white,
         borderRadius: BorderRadius.all(
           Radius.circular(8.0),
+        ),
+      ),
+      child: Center(
+        child: Column(
+          children: <Widget>[
+            Icon(Icons.contact_mail_outlined),
+            Text('Doctor'),
+          ],
         ),
       ),
     );

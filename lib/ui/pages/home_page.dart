@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medizorg/ui/molecules/search_bar.dart';
+import 'package:medizorg/ui/molecules/service_item.dart';
 
 class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
@@ -39,12 +40,41 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 200.0,
+                  height: 300.0,
                   child: GridView.count(
+                    physics: ScrollPhysics(),
+                    mainAxisSpacing: 8.0,
+                    crossAxisSpacing: 8.0,
                     crossAxisCount: 3,
-                    children: <Widget>[],
+                    children: <Widget>[
+                      ServiceItem(),
+                      ServiceItem(),
+                      ServiceItem(),
+                      ServiceItem(),
+                      ServiceItem(),
+                      ServiceItem(),
+                    ],
                   ),
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      'Health Articles',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      'See all',
+                      style: TextStyle(
+                        color: Colors.black38,
+                      ),
+                    ),
+                  ],
+                ),
+                Container(),
               ],
             ),
           ),
