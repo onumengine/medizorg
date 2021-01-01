@@ -26,6 +26,25 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
                 SearchBar(),
+                SizedBox(height: 16.0),
+                Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: Text(
+                    'What do you need?',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 200.0,
+                  child: GridView.count(
+                    crossAxisCount: 3,
+                    children: <Widget>[],
+                  ),
+                ),
               ],
             ),
           ),
