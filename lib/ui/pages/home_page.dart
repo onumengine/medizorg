@@ -15,8 +15,37 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
-              Text('Welcome'),
-              Text('to Medizorg'),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Welcome',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    fontSize: 30.0,
+                  ),
+                ),
+              ),
+              Row(
+                children: <Widget>[
+                  Text(
+                    'to ',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      fontSize: 30.0,
+                    ),
+                  ),
+                  Text(
+                    'Medizorg',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue,
+                      fontSize: 30.0,
+                    ),
+                  ),
+                ],
+              ),
               Text(
                 'Official Public Service Announcement on Coronavirus from the World Health Organization',
               ),
