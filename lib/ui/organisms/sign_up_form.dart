@@ -17,6 +17,9 @@ class _SignUpFormState extends State<SignUpForm> {
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: ListView(
         children: <Widget>[
+          SizedBox(
+            height: (MediaQuery.of(context).size.height) / 9,
+          ),
           Row(
             children: <Text>[
               Text(
@@ -111,23 +114,15 @@ class _SignUpFormState extends State<SignUpForm> {
                 SizedBox(
                   height: 16.0,
                 ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      'Don\'t have an account?',
-                      style: TextStyle(color: Colors.black38),
-                    ),
-                    FlatButton(
+                Align(
+                    alignment: AlignmentDirectional.bottomCenter,
+                    child: FlatButton(
                       onPressed: null,
                       child: Text(
                         'SIGN UP',
                         style: TextStyle(color: Colors.blue),
                       ),
-                    )
-                  ],
-                ),
+                    )),
               ],
             ),
           ),
