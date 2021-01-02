@@ -7,8 +7,10 @@ class DoctorRegistrationPage extends StatefulWidget {
 class _DoctorRegistrationPageState extends State<DoctorRegistrationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('Register As A Doctor'),
+      body: SafeArea(
+        child: Center(
+          child: Text('Register As A Doctor'),
+        ),
       ),
     );
   }

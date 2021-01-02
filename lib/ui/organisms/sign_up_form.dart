@@ -106,7 +106,7 @@ class _SignUpFormState extends State<SignUpForm> {
                       Navigator.of(context).pushNamed('/home_page');
                     },
                     child: Text(
-                      'SIGN IN',
+                      'SIGN UP',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
@@ -115,14 +115,15 @@ class _SignUpFormState extends State<SignUpForm> {
                   height: 16.0,
                 ),
                 Align(
-                    alignment: AlignmentDirectional.bottomCenter,
-                    child: FlatButton(
-                      onPressed: null,
-                      child: Text(
-                        'SIGN UP',
-                        style: TextStyle(color: Colors.blue),
-                      ),
-                    )),
+                  alignment: AlignmentDirectional.bottomEnd,
+                  child: IconButton(
+                    icon: Icon(Icons.call_to_action_rounded),
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushNamed('/doctor_registration_page');
+                    },
+                  ),
+                ),
               ],
             ),
           ),
