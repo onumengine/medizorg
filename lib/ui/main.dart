@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medizorg/ui/pages/doctor_registration_page.dart';
 import 'package:medizorg/ui/pages/sign_in_page.dart';
 import 'package:medizorg/ui/pages/sign_up_page.dart';
 import 'package:medizorg/ui/pages/welcome_page.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => WelcomePage(),
         '/sign_in_page': (context) => SignInPage(),
         '/sign_up_page': (context) => SignUpPage(),
+        '/doctor_registration_page': (context) => DoctorRegistrationPage(),
         '/home_page': (context) => HomePage(),
       },
     );
