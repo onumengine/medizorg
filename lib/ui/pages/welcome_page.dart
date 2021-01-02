@@ -51,7 +51,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     )
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),
