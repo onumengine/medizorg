@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medizorg/ui/pages/sign_in_page.dart';
+import 'package:medizorg/ui/pages/sign_up_page.dart';
 import 'package:medizorg/ui/pages/welcome_page.dart';
 import 'package:medizorg/ui/pages/home_page.dart';
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => WelcomePage(),
         '/sign_in_page': (context) => SignInPage(),
+        '/sign_up_page': (context) => SignUpPage(),
         '/home_page': (context) => HomePage(),
       },
     );
