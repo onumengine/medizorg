@@ -15,9 +15,7 @@ class _SignUpFormState extends State<SignUpForm> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
         children: <Widget>[
           Row(
             children: <Text>[
@@ -30,7 +28,7 @@ class _SignUpFormState extends State<SignUpForm> {
                 ),
               ),
               Text(
-                'In',
+                'Up',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.blue,
@@ -72,16 +70,21 @@ class _SignUpFormState extends State<SignUpForm> {
                   },
                 ),
                 SizedBox(
-                  height: 4.0,
+                  height: 20.0,
                 ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    'Forgot Password?',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                EditText(
+                  labelText: 'Confirm Password',
+                  key: _confirmPasswordFieldKey,
+                  obscureText: true,
+                  autocorrect: false,
+                  validator: (String value) {
+                    return (value.isEmpty)
+                        ? 'Please enter your password'
+                        : null;
+                  },
+                ),
+                SizedBox(
+                  height: 4.0,
                 ),
                 SizedBox(
                   height: 20.0,
