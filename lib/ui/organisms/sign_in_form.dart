@@ -117,7 +117,9 @@ class _SignInFormState extends State<SignInForm> {
                       style: TextStyle(color: Colors.black38),
                     ),
                     FlatButton(
-                      onPressed: null,
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/sign_up_page');
+                      },
                       child: Text(
                         'SIGN UP',
                         style: TextStyle(color: Colors.blue),
