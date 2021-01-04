@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:medizorg/ui/molecules/edit_text.dart';
 import 'package:medizorg/ui/molecules/text_field.dart';
 
 class SignInForm extends StatefulWidget {
