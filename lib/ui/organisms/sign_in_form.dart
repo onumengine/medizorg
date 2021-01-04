@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medizorg/ui/molecules/edit_text.dart';
+import 'package:medizorg/ui/molecules/text_field.dart';
 
 class SignInForm extends StatefulWidget {
   _SignInFormState createState() => _SignInFormState();
@@ -10,6 +11,8 @@ class _SignInFormState extends State<SignInForm> {
   final _emailFieldKey = GlobalKey<FormState>();
   final _passwordFieldKey = GlobalKey<FormState>();
   final _confirmPasswordFieldKey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -50,26 +53,20 @@ class _SignInFormState extends State<SignInForm> {
             key: _formKey,
             child: Column(
               children: <Widget>[
-                EditText(
-                  labelText: 'Email',
+                TextWidget(
+                  hintText: 'Email',
                   key: _emailFieldKey,
-                  validator: (String value) {
-                    return (value.isEmpty) ? "Please enter your email" : null;
-                  },
+                  controller: _emailController,
                 ),
                 SizedBox(
                   height: 20.0,
                 ),
-                EditText(
-                  labelText: 'Password',
+                TextWidget(
+                  hintText: 'Password',
                   key: _passwordFieldKey,
+                  controller: _passwordController,
                   obscureText: true,
                   autocorrect: false,
-                  validator: (String value) {
-                    return (value.isEmpty)
-                        ? 'Please enter your password'
-                        : null;
-                  },
                 ),
                 SizedBox(
                   height: 4.0,
