@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "495564465188",
+    "project_id": "medizorg",
+    "storage_bucket": "medizorg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495564465188:android:b92c8f1bab8ad780a324b1",
+        "android_client_info": {
+          "package_name": "org.medizorg.medizorg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "495564465188-gb4maet742pudj8tgsv1ci2a8vgcqf8g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYfIripTRRw89pQ0w5mSK54gD3KbtAwDI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "495564465188-gb4maet742pudj8tgsv1ci2a8vgcqf8g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
