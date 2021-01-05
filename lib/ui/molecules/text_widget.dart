@@ -4,7 +4,8 @@ class TextWidget extends StatelessWidget {
   String hintText;
   GlobalKey key;
   TextEditingController controller;
-  bool obscureText, autocorrect, autofillHints;
+  bool obscureText, autocorrect;
+  Iterable<String> autofillHints;
   String enteredText;
 
   TextWidget({
@@ -13,7 +14,7 @@ class TextWidget extends StatelessWidget {
     this.controller,
     this.autocorrect,
     this.obscureText = false,
-    this.autofillHints = true,
+    this.autofillHints,
   }) : enteredText = controller.text;
 
   Widget build(BuildContext context) {
@@ -32,6 +33,9 @@ class TextWidget extends StatelessWidget {
           SizedBox(width: 8.0),
           Expanded(
             child: TextField(
+              controller: this.controller,
+              obscureText: this.obscureText,
+              autofillHints: this.autofillHints,
               textAlignVertical: TextAlignVertical.bottom,
               decoration: InputDecoration.collapsed(
                 hintText: this.hintText,
