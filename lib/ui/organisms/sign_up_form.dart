@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medizorg/ui/molecules/text_field.dart';
+import 'package:medizorg/ui/molecules/text_widget.dart';
 
 class SignUpForm extends StatefulWidget {
   _SignUpFormState createState() => _SignUpFormState();

@@ -5,6 +5,7 @@ class TextWidget extends StatelessWidget {
   GlobalKey key;
   TextEditingController controller;
   bool obscureText, autocorrect, autofillHints;
+  String enteredText;
 
   TextWidget({
     this.key,
@@ -13,7 +14,7 @@ class TextWidget extends StatelessWidget {
     this.autocorrect,
     this.obscureText = false,
     this.autofillHints = true,
-  });
+  }) : enteredText = controller.text;
 
   Widget build(BuildContext context) {
     return Container(
