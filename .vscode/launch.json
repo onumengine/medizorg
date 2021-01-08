@@ -9,7 +9,6 @@
             "name": "medizorg",
             "request": "launch",
             "type": "dart",
-            "program": "lib/ui/main.dart"
         }
     ]
 }
