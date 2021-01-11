@@ -100,6 +100,7 @@ class _SignInFormState extends State<SignInForm> {
                   emailController.text,
                   passwordController.text,
                 )) {
+                  signInUser(emailController.text, passwordController.text);
                   Navigator.of(context).pushNamed('/home_page');
                 } else {
                   Scaffold.of(context).showSnackBar(SnackBar(
@@ -151,20 +152,16 @@ class _SignInFormState extends State<SignInForm> {
     return (emailIsValid(email) && passwordIsValid(password));
   }
 
-  void createUser(String email, String password) async {
+  void signInUser(String email, String password) async {
     try {
-      await auth.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'weak-password') {
-        print('The password provided is too weak.');
-      } else if (e.code == 'email-already-in-use') {
-        print('The account already exists for that email.');
+      if (e.code == 'user-not-found') {
+        print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        print('Wrong password provided for that user.');
       }
-    } catch (e) {
-      print(e);
     }
   }
 }
