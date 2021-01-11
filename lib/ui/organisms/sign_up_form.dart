@@ -106,6 +106,7 @@ class _SignUpFormState extends State<SignUpForm> {
                   emailTextController.text,
                   passwordTextController.text,
                 );
+                Navigator.of(context).pushNamed('/home_page');
               },
               child: Text(
                 'SIGN UP',
