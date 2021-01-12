@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medizorg/utils/constants.dart';
+import 'package:medizorg/utils/strings.dart';
 
 class DoctorRegistrationPage extends StatefulWidget {
   _DoctorRegistrationPageState createState() => _DoctorRegistrationPageState();

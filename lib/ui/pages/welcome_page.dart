@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medizorg/ui/molecules/welcome_div.dart';
-import 'package:medizorg/utils/constants.dart';
+import 'package:medizorg/utils/strings.dart';
 
 class WelcomePage extends StatefulWidget {
   @override

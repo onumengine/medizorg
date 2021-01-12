@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medizorg/ui/molecules/text_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:medizorg/utils/constants.dart';
+import 'package:medizorg/utils/strings.dart';
 
 class SignInForm extends StatefulWidget {
   _SignInFormState createState() => _SignInFormState();

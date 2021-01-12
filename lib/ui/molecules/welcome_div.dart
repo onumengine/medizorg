@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import '../../utils/strings.dart';
 
 class WelcomeDiv extends StatelessWidget {
   Widget build(BuildContext context) {
