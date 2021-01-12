@@ -5,6 +5,7 @@ import 'package:medizorg/ui/pages/sign_up_page.dart';
 import 'package:medizorg/ui/pages/welcome_page.dart';
 import 'package:medizorg/ui/pages/home_page.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:medizorg/utils/strings.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,15 +23,17 @@ class MyApp extends StatelessWidget {
         if (snapshot.hasError) {
           print(snapshot.error);
           return MaterialApp(
-            home: Center(
-              child: Text("Unable to create FirebaseApp"),
+            home: Scaffold(
+              body: Center(
+                child: Text("Unable to create FirebaseApp"),
+              ),
             ),
           );
         }
 
         if (snapshot.connectionState == ConnectionState.done) {
           return MaterialApp(
-            title: 'Flutter Demo',
+            title: TEXT_MEDIZORG,
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
               primarySwatch: Colors.red,
@@ -38,11 +41,10 @@ class MyApp extends StatelessWidget {
             ),
             home: WelcomePage(),
             routes: {
-              '/sign_in_page': (context) => SignInPage(),
-              '/sign_up_page': (context) => SignUpPage(),
-              '/doctor_registration_page': (context) =>
-                  DoctorRegistrationPage(),
-              '/home_page': (context) => HomePage(),
+              ROUTE_SIGN_IN_PAGE: (context) => SignInPage(),
+              ROUTE_SIGN_UP_PAGE: (context) => SignUpPage(),
+              ROUTE_DOCTOR_REG_PAGE: (context) => DoctorRegistrationPage(),
+              ROUTE_HOME_PAGE: (context) => HomePage(),
             },
           );
         }
