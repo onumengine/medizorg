@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:medizorg/ui/molecules/health_article.dart';
 import 'package:medizorg/ui/molecules/search_bar.dart';
 import 'package:medizorg/ui/molecules/service_item.dart';
+import 'package:medizorg/utils/strings.dart';
 
 class HomePage extends StatefulWidget {
-  final String label = 'Medizorg';
   _HomePageState createState() => _HomePageState();
 }
 
@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(widget.label),
+                    Text(TEXT_MEDIZORG),
                     IconButton(
                       icon: Icon(Icons.notifications_rounded),
                       onPressed: () {},
@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
                 Align(
                   alignment: AlignmentDirectional.centerStart,
                   child: Text(
-                    'What do you need?',
+                    TEXT_WHAT_DO_YOU_NEED,
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
@@ -54,26 +54,28 @@ class _HomePageState extends State<HomePage> {
                     children: <Widget>[
                       ServiceItem(
                         iconData: Icons.mail_outline_rounded,
-                        text: 'Consult',
+                        text: TEXT_CONSULT,
                       ),
                       ServiceItem(
                         iconData: Icons.message_rounded,
-                        text: 'Chat',
+                        text: TEXT_CHAT,
                       ),
                       ServiceItem(
                         iconData: Icons.video_call_rounded,
-                        text: 'Virtual consult',
+                        text: TEXT_VIRTUAL_CONSULT,
                       ),
                       ServiceItem(
                         iconData: Icons.book_online_rounded,
-                        text: 'Schedule',
+                        text: TEXT_SCHEDULE,
                       ),
                       ServiceItem(
                         iconData: Icons.receipt_rounded,
-                        text: 'My purchases',
+                        text: TEXT_MY_PURCHASES,
                       ),
                       ServiceItem(
-                          iconData: Icons.notes_rounded, text: 'My records'),
+                        iconData: Icons.notes_rounded,
+                        text: TEXT_MY_RECORDS,
+                      ),
                     ],
                   ),
                 ),
@@ -81,14 +83,14 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
-                      'Health Articles',
+                      TEXT_HEALTH_ARTICLES,
                       style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
-                      'See all',
+                      TEXT_SEE_ALL,
                       style: TextStyle(
                         color: Colors.black38,
                       ),
@@ -119,15 +121,15 @@ class _HomePageState extends State<HomePage> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.message_rounded),
-            label: 'Message',
+            label: TEXT_MESSAGE,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.calendar_today_rounded),
-            label: 'Calendar',
+            label: TEXT_CALENDAR,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.contact_page_rounded),
-            label: 'Profile',
+            label: TEXT_PROFILE,
           )
         ],
       ),
