@@ -158,9 +158,9 @@ class _SignInFormState extends State<SignInForm> {
       UserCredential userCredential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
-      if (e.code == USER_NOT_FOUND_ERROR_CODE) {
+      if (e.code == ERROR_MESSAGE_USER_NOT_FOUND) {
         print('No user found for that email.');
-      } else if (e.code == WRONG_PASSWORD_ERROR_CODE) {
+      } else if (e.code == ERROR_MESSAGE_WRONG_PASSWORD) {
         print('Wrong password provided for that user.');
       }
     }

@@ -1,7 +1,7 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:medizorg/ui/molecules/text_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:medizorg/utils/constants.dart';
 
 class SignUpForm extends StatefulWidget {
   _SignUpFormState createState() => _SignUpFormState();
@@ -36,7 +36,7 @@ class _SignUpFormState extends State<SignUpForm> {
           Row(
             children: <Text>[
               Text(
-                'Sign ',
+                TEXT_SIGN,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
@@ -44,7 +44,7 @@ class _SignUpFormState extends State<SignUpForm> {
                 ),
               ),
               Text(
-                'Up',
+                TEXT_UP,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.blue,
@@ -56,12 +56,12 @@ class _SignUpFormState extends State<SignUpForm> {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20.0),
             child: Text(
-              'Please enter your credentials to proceed',
+              TEXT_ENTER_CREDENTIALS,
               style: TextStyle(color: Colors.black45),
             ),
           ),
           TextWidget(
-            hintText: 'Email',
+            hintText: HINT_TEXT_EMAIL,
             key: _emailFieldKey,
             controller: emailTextController,
           ),
@@ -69,7 +69,7 @@ class _SignUpFormState extends State<SignUpForm> {
             height: 20.0,
           ),
           TextWidget(
-            hintText: 'Password',
+            hintText: HINT_TEXT_PASSWORD,
             key: _passwordFieldKey,
             controller: passwordTextController,
             obscureText: true,
@@ -79,7 +79,7 @@ class _SignUpFormState extends State<SignUpForm> {
             height: 20.0,
           ),
           TextWidget(
-            hintText: 'Confirm password',
+            hintText: HINT_TEXT_CONFIRM_PASSWORD,
             key: _confirmPasswordFieldKey,
             controller: confirmPasswordTextController,
             obscureText: true,
@@ -106,10 +106,10 @@ class _SignUpFormState extends State<SignUpForm> {
                   emailTextController.text,
                   passwordTextController.text,
                 );
-                Navigator.of(context).pushNamed('/home_page');
+                Navigator.of(context).pushNamed(ROUTE_HOME_PAGE);
               },
               child: Text(
-                'SIGN UP',
+                TEXT_SIGN_UP,
                 style: TextStyle(color: Colors.white),
               ),
             ),
@@ -122,7 +122,7 @@ class _SignUpFormState extends State<SignUpForm> {
             child: IconButton(
               icon: Icon(Icons.call_to_action_rounded),
               onPressed: () {
-                Navigator.of(context).pushNamed('/doctor_registration_page');
+                Navigator.of(context).pushNamed(ROUTE_DOCTOR_REG_PAGE);
               },
             ),
           ),
@@ -138,9 +138,9 @@ class _SignUpFormState extends State<SignUpForm> {
         password: password,
       );
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'weak-password') {
+      if (e.code == ERROR_MESSAGE_WEAK_PASSWORD) {
         print('The password provided is too weak.');
-      } else if (e.code == 'email-already-in-use') {
+      } else if (e.code == ERROR_MESSAGE_EMAIL_ALREADY_USED) {
         print('The account already exists for that email.');
       }
     } catch (e) {

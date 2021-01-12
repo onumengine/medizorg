@@ -22,7 +22,7 @@ class WelcomeDiv extends StatelessWidget {
         Row(
           children: <Widget>[
             Text(
-              TO,
+              TEXT_TO,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
@@ -30,7 +30,7 @@ class WelcomeDiv extends StatelessWidget {
               ),
             ),
             Text(
-              MEDIZORG,
+              TEXT_MEDIZORG,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.blue,
@@ -42,7 +42,7 @@ class WelcomeDiv extends StatelessWidget {
         SizedBox(
           height: 20.0,
         ),
-        Text(PUBLIC_SERVICE_ANNOUNCEMENT,
+        Text(TEXT_PUBLIC_SERVICE_ANNOUNCEMENT,
             style: TextStyle(
               color: Colors.black38,
             )),

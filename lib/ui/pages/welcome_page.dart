@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medizorg/ui/molecules/welcome_div.dart';
-import '../../utils/constants.dart';
+import 'package:medizorg/utils/constants.dart';
 
 class WelcomePage extends StatefulWidget {
   @override
@@ -28,7 +28,7 @@ class _WelcomePageState extends State<WelcomePage> {
               Expanded(
                 child: Stack(
                   children: <Widget>[
-                    Image.asset(DOCTOR_IMAGE_URL),
+                    Image.asset(ASSET_IMG_DOCTOR_IMAGE),
                     Positioned(
                       bottom: -15.0,
                       right: -15.0,
@@ -45,7 +45,7 @@ class _WelcomePageState extends State<WelcomePage> {
                             color: Colors.white,
                           ),
                           onTap: () {
-                            Navigator.of(context).pushNamed(SIGN_IN_PAGE_ROUTE);
+                            Navigator.of(context).pushNamed(ROUTE_SIGN_IN_PAGE);
                           },
                         ),
                       ),
