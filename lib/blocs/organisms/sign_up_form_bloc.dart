@@ -21,5 +21,46 @@ class SignUpFormBloc extends ChangeNotifier {
   TextEditingController get confirmPasswordTextController =>
       _confirmPasswordTextController;
 
-  FirebaseAuth _auth = FirebaseAuth.instance;
+  FirebaseAuth auth = FirebaseAuth.instance;
+
+  bool emailIsEmpty() {
+    return emailTextController.text.isEmpty;
+  }
+
+  bool emailIsValid() {
+    return emailTextController.text.contains('@') &&
+        emailTextController.text.contains('.');
+  }
+
+  bool passwordIsLongEnough() {
+    return passwordTextController.text.length >= 8;
+  }
+
+  bool bothPasswordsMatch() {
+    return passwordTextController.text == confirmPasswordTextController.text;
+  }
+
+  bool allEntriesAreValid() {
+    return !emailIsEmpty() &&
+        emailIsValid() &&
+        passwordIsLongEnough() &&
+        bothPasswordsMatch();
+  }
+
+  void createUser(String email, String password) async {
+    try {
+      UserCredential credential = await auth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        print('The password provided is too weak.');
+      } else if (e.code == 'email-already-in-use') {
+        print('The account already exists for that email.');
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
 }

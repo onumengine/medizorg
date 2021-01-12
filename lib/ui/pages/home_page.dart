@@ -57,7 +57,9 @@ class _HomePageState extends State<HomePage> {
                         text: 'Consult',
                       ),
                       ServiceItem(
-                          iconData: Icons.message_rounded, text: 'Chat'),
+                        iconData: Icons.message_rounded,
+                        text: 'Chat',
+                      ),
                       ServiceItem(
                         iconData: Icons.video_call_rounded,
                         text: 'Virtual consult',
