@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medizorg/ui/molecules/text_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:medizorg/utils/constants.dart';
 
 class SignInForm extends StatefulWidget {
   _SignInFormState createState() => _SignInFormState();
@@ -157,9 +158,9 @@ class _SignInFormState extends State<SignInForm> {
       UserCredential userCredential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-found') {
+      if (e.code == USER_NOT_FOUND_ERROR_CODE) {
         print('No user found for that email.');
-      } else if (e.code == 'wrong-password') {
+      } else if (e.code == WRONG_PASSWORD_ERROR_CODE) {
         print('Wrong password provided for that user.');
       }
     }
