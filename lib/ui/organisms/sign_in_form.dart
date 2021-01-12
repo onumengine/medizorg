@@ -32,7 +32,7 @@ class _SignInFormState extends State<SignInForm> {
           Row(
             children: <Text>[
               Text(
-                'Sign ',
+                TEXT_SIGN,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
@@ -40,7 +40,7 @@ class _SignInFormState extends State<SignInForm> {
                 ),
               ),
               Text(
-                'In',
+                TEXT_IN,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.blue,
@@ -52,12 +52,12 @@ class _SignInFormState extends State<SignInForm> {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20.0),
             child: Text(
-              'Please enter your credentials to proceed',
+              TEXT_ENTER_CREDENTIALS,
               style: TextStyle(color: Colors.black45),
             ),
           ),
           TextWidget(
-            hintText: 'Email',
+            hintText: HINT_TEXT_EMAIL,
             key: _emailFieldKey,
             controller: emailController,
           ),
@@ -65,7 +65,7 @@ class _SignInFormState extends State<SignInForm> {
             height: 20.0,
           ),
           TextWidget(
-            hintText: 'Password',
+            hintText: HINT_TEXT_PASSWORD,
             key: _passwordFieldKey,
             controller: passwordController,
             obscureText: true,
@@ -77,7 +77,7 @@ class _SignInFormState extends State<SignInForm> {
           Align(
             alignment: Alignment.centerRight,
             child: Text(
-              'Forgot Password?',
+              TEXT_FORGOT_PASSWORD,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
@@ -97,6 +97,7 @@ class _SignInFormState extends State<SignInForm> {
             ),
             child: TextButton(
               onPressed: () {
+                /*
                 if (validateForm(
                   emailController.text,
                   passwordController.text,
@@ -106,10 +107,11 @@ class _SignInFormState extends State<SignInForm> {
                 } else {
                   Scaffold.of(context).showSnackBar(SnackBar(
                       content: Text("You have to enter valid content")));
-                }
+                } */
+                Navigator.of(context).pushNamed(ROUTE_HOME_PAGE);
               },
               child: Text(
-                'SIGN IN',
+                TEXT_SIGN_IN_UPPERCASE,
                 style: TextStyle(color: Colors.white),
               ),
             ),
@@ -122,15 +124,15 @@ class _SignInFormState extends State<SignInForm> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                'Don\'t have an account?',
+                TEXT_DONT_HAVE_AN_ACCOUNT,
                 style: TextStyle(color: Colors.black38),
               ),
               FlatButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed('/sign_up_page');
+                  Navigator.of(context).pushNamed(ROUTE_SIGN_UP_PAGE);
                 },
                 child: Text(
-                  'SIGN UP',
+                  TEXT_SIGN_UP_UPPERCASE,
                   style: TextStyle(color: Colors.blue),
                 ),
               )

@@ -109,7 +109,7 @@ class _SignUpFormState extends State<SignUpForm> {
                 Navigator.of(context).pushNamed(ROUTE_HOME_PAGE);
               },
               child: Text(
-                TEXT_SIGN_UP,
+                TEXT_SIGN_UP_UPPERCASE,
                 style: TextStyle(color: Colors.white),
               ),
             ),

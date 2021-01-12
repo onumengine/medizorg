@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medizorg/ui/atoms/filled_icon_button.dart';
+import 'package:medizorg/utils/strings.dart';
 
 class SearchBar extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class SearchBar extends StatelessWidget {
             child: TextField(
               textAlignVertical: TextAlignVertical.bottom,
               decoration: InputDecoration.collapsed(
-                hintText: 'Search doctors',
+                hintText: HINT_TEXT_SEARCH_DOCTORS,
                 hintStyle: TextStyle(
                   color: Colors.black26,
                 ),
