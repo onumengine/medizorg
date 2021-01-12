@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medizorg/utils/constants.dart';
 
 class DoctorRegistrationPage extends StatefulWidget {
   _DoctorRegistrationPageState createState() => _DoctorRegistrationPageState();
@@ -27,11 +28,11 @@ class _DoctorRegistrationPageState extends State<DoctorRegistrationPage> {
               children: <Widget>[
                 FlatButton(
                   onPressed: () {},
-                  child: Text('Back'),
+                  child: Text(TEXT_BACK),
                 ),
                 FlatButton(
                   onPressed: () {},
-                  child: Text('Next'),
+                  child: Text(TEXT_BACK),
                 ),
               ],
             )

@@ -15,8 +15,10 @@ const ROUTE_DOCTOR_REG_PAGE = '/doctor_registration_page';
 const ROUTE_HOME_PAGE = '/home_page';
 const ROUTE_SIGN_IN_PAGE = '/sign_in_page';
 // TEXTS
+const TEXT_BACK = 'Back';
 const TEXT_ENTER_CREDENTIALS = 'Please enter your credentials to proceed';
 const TEXT_MEDIZORG = 'Medizorg';
+const TEXT_NEXT = 'Next';
 const TEXT_PUBLIC_SERVICE_ANNOUNCEMENT =
     'Official Public Service Announcement on Coronavirus from the World Health Organization';
 const TEXT_SIGN = 'Sign ';
