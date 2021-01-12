@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../utils/constants.dart';
 
 class WelcomeDiv extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -7,7 +8,7 @@ class WelcomeDiv extends StatelessWidget {
         Align(
           alignment: Alignment.centerLeft,
           child: Text(
-            'Welcome',
+            WELCOME,
             style: TextStyle(
               fontWeight: FontWeight.bold,
               color: Colors.black,
@@ -21,7 +22,7 @@ class WelcomeDiv extends StatelessWidget {
         Row(
           children: <Widget>[
             Text(
-              'to ',
+              TO,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
@@ -29,7 +30,7 @@ class WelcomeDiv extends StatelessWidget {
               ),
             ),
             Text(
-              'Medizorg',
+              MEDIZORG,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.blue,
@@ -41,8 +42,7 @@ class WelcomeDiv extends StatelessWidget {
         SizedBox(
           height: 20.0,
         ),
-        Text(
-            'Official Public Service Announcement on Coronavirus from the World Health Organization',
+        Text(PUBLIC_SERVICE_ANNOUNCEMENT,
             style: TextStyle(
               color: Colors.black38,
             )),
