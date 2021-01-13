@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:medizorg/utils/strings.dart';
 
 class SignInFormBloc extends ChangeNotifier {
   final _emailFieldKey = GlobalKey<FormState>();
@@ -37,6 +38,10 @@ class SignInFormBloc extends ChangeNotifier {
     return !emailIsEmpty(email) &&
         emailIsValid(email) &&
         passwordIsLongEnough(password);
+  }
+
+  nextPage(BuildContext context) {
+    Navigator.of(context).pushNamed(ROUTE_HOME_PAGE);
   }
 
   signInUser(String email, String password) async {
