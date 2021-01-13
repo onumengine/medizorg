@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:medizorg/ui/molecules/text_widget.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:medizorg/utils/strings.dart';
 import 'package:medizorg/blocs/organisms/sign_up_form_bloc.dart';
 import 'package:provider/provider.dart';
@@ -10,8 +9,6 @@ class SignUpForm extends StatefulWidget {
 }
 
 class _SignUpFormState extends State<SignUpForm> {
-  FirebaseAuth auth = FirebaseAuth.instance;
-
   @override
   Widget build(BuildContext context) {
     final SignUpFormBloc signUpFormBloc = Provider.of<SignUpFormBloc>(context);
