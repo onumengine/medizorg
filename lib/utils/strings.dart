@@ -1,3 +1,8 @@
+/*
+  All string constants are arranged in alphabetical order and grouped according
+  to type
+*/
+
 // ASSETS
 const ASSET_IMG_DOCTOR_IMAGE = 'lib/assets/doctor.png';
 // FIREBASE ERROR MESSAGES
