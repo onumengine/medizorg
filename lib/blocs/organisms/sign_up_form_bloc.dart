@@ -23,6 +23,12 @@ class SignUpFormBloc extends ChangeNotifier {
 
   FirebaseAuth auth = FirebaseAuth.instance;
 
+  disposeControllers() {
+    emailTextController.dispose();
+    passwordTextController.dispose();
+    confirmPasswordTextController.dispose();
+  }
+
   bool emailIsEmpty() {
     return emailTextController.text.isEmpty;
   }
@@ -47,7 +53,7 @@ class SignUpFormBloc extends ChangeNotifier {
         bothPasswordsMatch();
   }
 
-  void createUser(String email, String password) async {
+  createUser(String email, String password) async {
     try {
       UserCredential credential = await auth.createUserWithEmailAndPassword(
         email: email,
