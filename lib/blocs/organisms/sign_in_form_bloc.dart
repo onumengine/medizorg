@@ -16,6 +16,11 @@ class SignInFormBloc extends ChangeNotifier {
 
   FirebaseAuth auth = FirebaseAuth.instance;
 
+  disposeControllers() {
+    emailController.dispose();
+    passwordController.dispose();
+  }
+
   bool emailIsEmpty(String email) {
     return email.isEmpty;
   }
@@ -34,7 +39,7 @@ class SignInFormBloc extends ChangeNotifier {
         passwordIsLongEnough(password);
   }
 
-  void signInUser(String email, String password) async {
+  signInUser(String email, String password) async {
     try {
       UserCredential userCredential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
