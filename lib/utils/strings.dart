@@ -10,6 +10,8 @@ const ERROR_MESSAGE_EMAIL_ALREADY_USED = 'email-already-in-use';
 const ERROR_MESSAGE_USER_NOT_FOUND = 'user-not-found';
 const ERROR_MESSAGE_WEAK_PASSWORD = 'weak-password';
 const ERROR_MESSAGE_WRONG_PASSWORD = 'wrong-password';
+// FIREBASE FEEDBACK MESSAGES
+const FEEDBACK_SUCCESS = 'success';
 // HINT TEXTS
 const HINT_TEXT_EMAIL = 'Email';
 const HINT_TEXT_CONFIRM_PASSWORD = 'Confirm Password';

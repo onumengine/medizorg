@@ -28,7 +28,10 @@ class _WelcomePageState extends State<WelcomePage> {
               Expanded(
                 child: Stack(
                   children: <Widget>[
-                    Image.asset(ASSET_IMG_DOCTOR_IMAGE),
+                    Image.asset(
+                      ASSET_IMG_DOCTOR_IMAGE,
+                      width: MediaQuery.of(context).size.width,
+                    ),
                     Positioned(
                       bottom: -15.0,
                       right: -15.0,

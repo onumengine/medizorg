@@ -87,14 +87,7 @@ class _SignInFormState extends State<SignInForm> {
             ),
             child: TextButton(
               onPressed: () {
-                /*
-                  signInFormBloc.signInUser(
-                    signInFormBloc.emailController.text,
-                    signInFormBloc.passwordController.text,
-                  );
-                  Navigator.of(context).pushNamed(ROUTE_HOME_PAGE);
-                  */
-                signInFormBloc.nextPage(context);
+                signInFormBloc.getSuccessStatus(context);
               },
               child: Text(
                 TEXT_SIGN_IN_UPPERCASE,
