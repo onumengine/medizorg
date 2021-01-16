@@ -29,6 +29,14 @@ class _SignUpFormState extends State<SignUpForm> {
       _confirmPasswordTextController;
 
   @override
+  void dispose() {
+    emailTextController.dispose();
+    passwordTextController.dispose();
+    confirmPasswordTextController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final SignUpFormBloc signUpFormBloc = Provider.of<SignUpFormBloc>(context);
 

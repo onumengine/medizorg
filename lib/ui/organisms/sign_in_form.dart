@@ -10,6 +10,25 @@ class SignInForm extends StatefulWidget {
 }
 
 class _SignInFormState extends State<SignInForm> {
+  final _emailFieldKey = GlobalKey<FormState>();
+  GlobalKey<FormState> get emailFieldKey => _emailFieldKey;
+
+  final _passwordFieldKey = GlobalKey<FormState>();
+  GlobalKey<FormState> get passwordFieldKey => _passwordFieldKey;
+
+  final _emailController = TextEditingController();
+  TextEditingController get emailController => _emailController;
+
+  final _passwordController = TextEditingController();
+  TextEditingController get passwordController => _passwordController;
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final SignInFormBloc signInFormBloc = Provider.of<SignInFormBloc>(context);
@@ -53,16 +72,16 @@ class _SignInFormState extends State<SignInForm> {
             ),
             TextWidget(
               hintText: HINT_TEXT_EMAIL,
-              key: signInFormBloc.emailFieldKey,
-              controller: signInFormBloc.emailController,
+              key: emailFieldKey,
+              controller: emailController,
             ),
             SizedBox(
               height: 20.0,
             ),
             PasswordTextWidget(
               hintText: HINT_TEXT_PASSWORD,
-              key: signInFormBloc.passwordFieldKey,
-              controller: signInFormBloc.passwordController,
+              key: passwordFieldKey,
+              controller: passwordController,
             ),
             SizedBox(
               height: 4.0,
@@ -96,7 +115,11 @@ class _SignInFormState extends State<SignInForm> {
               ),
               child: TextButton(
                 onPressed: () {
-                  signInFormBloc.getSuccessStatus(context);
+                  signInFormBloc.getSuccessStatus(
+                    emailController.text,
+                    passwordController.text,
+                    context,
+                  );
                 },
                 child: Text(
                   TEXT_SIGN_IN_UPPERCASE,

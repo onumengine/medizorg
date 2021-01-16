@@ -1,53 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:medizorg/utils/strings.dart';
+import 'package:medizorg/auth_module/authenticator.dart';
+import 'package:medizorg/auth_module/validator.dart';
 
 class SignInFormBloc extends ChangeNotifier {
-  final _emailFieldKey = GlobalKey<FormState>();
-  GlobalKey<FormState> get emailFieldKey => _emailFieldKey;
-
-  final _passwordFieldKey = GlobalKey<FormState>();
-  GlobalKey<FormState> get passwordFieldKey => _passwordFieldKey;
-
-  final _emailController = TextEditingController();
-  TextEditingController get emailController => _emailController;
-
-  final _passwordController = TextEditingController();
-  TextEditingController get passwordController => _passwordController;
-
   FirebaseAuth auth = FirebaseAuth.instance;
 
-  disposeControllers() {
-    emailController.dispose();
-    passwordController.dispose();
-  }
-
   bool emailIsEmpty(String email) {
-    return email.isEmpty;
+    return Validator.emailIsEmpty(email);
   }
 
   bool emailIsValid(String email) {
-    return email.contains('@') && email.contains('.');
+    return Validator.emailIsValid(email);
   }
 
   bool passwordIsLongEnough(String password) {
-    return password.length >= 8;
+    return Validator.passwordIsLongEnough(password);
   }
 
   bool entriesAreValid(String email, String password) {
-    return !emailIsEmpty(email) &&
-        emailIsValid(email) &&
-        passwordIsLongEnough(password);
+    return Validator.allSignInEntriesAreValid(email, password);
   }
 
   openPage(String routeName, BuildContext context) {
     Navigator.of(context).pushNamed(routeName);
   }
 
-  void getSuccessStatus(BuildContext context) {
+  getSuccessStatus(String email, String password, BuildContext context) {
     Future<String> result = signInUser(
-      emailController.text,
-      passwordController.text,
+      email,
+      password,
     );
     if (result.toString() == FEEDBACK_SUCCESS) {
       openPage(ROUTE_HOME_PAGE, context);
@@ -56,20 +39,12 @@ class SignInFormBloc extends ChangeNotifier {
     }
   }
 
-  Future<String> signInUser(String email, String password) async {
-    try {
-      UserCredential userCredential = await FirebaseAuth.instance
-          .signInWithEmailAndPassword(email: email, password: password);
-      return 'success';
-    } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-found') {
-        print('No user found for that email.');
-        return 'no user found for that email.';
-      } else if (e.code == 'wrong-password') {
-        print('Wrong password provided for that user.');
-        return 'wrong password provided for that user.';
-      }
-    }
+  signInUser(String email, String password) async {
+    Authenticator.signInUser(email, password);
+  }
+
+  openHomePage(BuildContext context) {
+    Navigator.of(context).pushNamed(ROUTE_HOME_PAGE);
   }
 
   snackify(BuildContext context, String message) {
