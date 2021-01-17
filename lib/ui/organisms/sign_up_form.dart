@@ -9,6 +9,25 @@ class SignUpForm extends StatefulWidget {
 }
 
 class _SignUpFormState extends State<SignUpForm> {
+  final _emailFieldKey = GlobalKey<FormState>();
+  GlobalKey<FormState> get emailFieldKey => _emailFieldKey;
+
+  final _passwordFieldKey = GlobalKey<FormState>();
+  GlobalKey<FormState> get passwordFieldKey => _passwordFieldKey;
+
+  final _confirmPasswordFieldKey = GlobalKey<FormState>();
+  GlobalKey<FormState> get confirmPasswordFieldKey => _confirmPasswordFieldKey;
+
+  final _emailTextController = TextEditingController();
+  TextEditingController get emailTextController => _emailTextController;
+
+  final _passwordTextController = TextEditingController();
+  TextEditingController get passwordTextController => _passwordTextController;
+
+  final _confirmPasswordTextController = TextEditingController();
+  TextEditingController get confirmPasswordTextController =>
+      _confirmPasswordTextController;
+
   @override
   Widget build(BuildContext context) {
     final SignUpFormBloc signUpFormBloc = Provider.of<SignUpFormBloc>(context);
@@ -49,16 +68,16 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextWidget(
             hintText: HINT_TEXT_EMAIL,
-            key: signUpFormBloc.emailFieldKey,
-            controller: signUpFormBloc.emailTextController,
+            key: emailFieldKey,
+            controller: emailTextController,
           ),
           SizedBox(
             height: 20.0,
           ),
           TextWidget(
             hintText: HINT_TEXT_PASSWORD,
-            key: signUpFormBloc.passwordFieldKey,
-            controller: signUpFormBloc.passwordTextController,
+            key: passwordFieldKey,
+            controller: passwordTextController,
             obscureText: true,
             autocorrect: false,
           ),
@@ -67,8 +86,8 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextWidget(
             hintText: HINT_TEXT_CONFIRM_PASSWORD,
-            key: signUpFormBloc.confirmPasswordFieldKey,
-            controller: signUpFormBloc.confirmPasswordTextController,
+            key: confirmPasswordFieldKey,
+            controller: confirmPasswordTextController,
             obscureText: true,
             autocorrect: false,
           ),
@@ -90,8 +109,8 @@ class _SignUpFormState extends State<SignUpForm> {
             child: TextButton(
               onPressed: () {
                 signUpFormBloc.createUser(
-                  signUpFormBloc.emailTextController.text,
-                  signUpFormBloc.passwordTextController.text,
+                  emailTextController.text,
+                  passwordTextController.text,
                 );
                 Navigator.of(context).pushNamed(ROUTE_HOME_PAGE);
               },

@@ -3,6 +3,7 @@ import 'package:medizorg/ui/molecules/text_widget.dart';
 import 'package:medizorg/utils/strings.dart';
 import 'package:medizorg/blocs/organisms/sign_in_form_bloc.dart';
 import 'package:provider/provider.dart';
+import 'package:medizorg/ui/molecules/password_text_widget.dart';
 
 class SignInForm extends StatefulWidget {
   _SignInFormState createState() => _SignInFormState();
@@ -58,12 +59,10 @@ class _SignInFormState extends State<SignInForm> {
             SizedBox(
               height: 20.0,
             ),
-            TextWidget(
+            PasswordTextWidget(
               hintText: HINT_TEXT_PASSWORD,
               key: signInFormBloc.passwordFieldKey,
               controller: signInFormBloc.passwordController,
-              obscureText: true,
-              autocorrect: false,
             ),
             SizedBox(
               height: 4.0,
