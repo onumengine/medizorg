@@ -19,6 +19,7 @@ const HINT_TEXT_PASSWORD = 'Password';
 const HINT_TEXT_SEARCH_DOCTORS = 'Search dsoctors';
 // ROUTES
 const ROUTE_DOCTOR_REG_PAGE = '/doctor_registration_page';
+const ROUTE_PASSWORD_RECOVERY_PAGE = '/password_recovery_page';
 const ROUTE_HOME_PAGE = '/home_page';
 const ROUTE_SIGN_IN_PAGE = '/sign_in_page';
 const ROUTE_SIGN_UP_PAGE = '/sign_up_page';

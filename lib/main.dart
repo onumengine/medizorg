@@ -6,6 +6,7 @@ import 'package:medizorg/ui/pages/welcome_page.dart';
 import 'package:medizorg/ui/pages/home_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:medizorg/utils/strings.dart';
+import 'package:medizorg/ui/pages/password_recovery_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
             routes: {
               ROUTE_SIGN_IN_PAGE: (context) => SignInPage(),
               ROUTE_SIGN_UP_PAGE: (context) => SignUpPage(),
+              ROUTE_PASSWORD_RECOVERY_PAGE: (context) => PasswordRecoveryPage(),
               ROUTE_DOCTOR_REG_PAGE: (context) => DoctorRegistrationPage(),
               ROUTE_HOME_PAGE: (context) => HomePage(),
             },
