@@ -40,8 +40,8 @@ class SignInFormBloc extends ChangeNotifier {
         passwordIsLongEnough(password);
   }
 
-  nextPage(BuildContext context) {
-    Navigator.of(context).pushNamed(ROUTE_HOME_PAGE);
+  openPage(String routeName, BuildContext context) {
+    Navigator.of(context).pushNamed(routeName);
   }
 
   void getSuccessStatus(BuildContext context) {
@@ -50,7 +50,7 @@ class SignInFormBloc extends ChangeNotifier {
       passwordController.text,
     );
     if (result.toString() == FEEDBACK_SUCCESS) {
-      nextPage(context);
+      openPage(ROUTE_HOME_PAGE, context);
     } else {
       snackify(context, result.toString());
     }
