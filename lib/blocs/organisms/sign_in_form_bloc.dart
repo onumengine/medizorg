@@ -51,6 +51,8 @@ class SignInFormBloc extends ChangeNotifier {
     Navigator.of(context).pushNamed(routeName);
   }
 
+  /*
+
   getSuccessStatus(String email, String password, BuildContext context) {
     Future<String> result = signInUser(
       email,
@@ -62,6 +64,8 @@ class SignInFormBloc extends ChangeNotifier {
       snackify(context, result.toString());
     }
   }
+
+  */
 
   signInUser(String email, String password) async {
     Authenticator.signInUser(email, password);

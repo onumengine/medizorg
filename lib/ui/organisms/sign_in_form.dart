@@ -116,10 +116,9 @@ class _SignInFormState extends State<SignInForm> {
               ),
               child: TextButton(
                 onPressed: () {
-                  signInFormBloc.getSuccessStatus(
+                  signInFormBloc.signInUser(
                     emailController.text,
                     passwordController.text,
-                    context,
                   );
                 },
                 child: Text(
