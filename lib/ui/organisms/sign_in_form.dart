@@ -82,6 +82,7 @@ class _SignInFormState extends State<SignInForm> {
               hintText: HINT_TEXT_PASSWORD,
               key: passwordFieldKey,
               controller: passwordController,
+              iconData: signInFormBloc.visibilityIcon,
             ),
             SizedBox(
               height: 4.0,

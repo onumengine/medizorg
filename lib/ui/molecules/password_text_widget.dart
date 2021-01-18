@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:medizorg/blocs/organisms/sign_in_form_bloc.dart';
+import 'package:provider/provider.dart';
 
-class PasswordTextWidget extends StatelessWidget {
+class PasswordTextWidget extends StatefulWidget {
   String hintText;
   GlobalKey key;
   TextEditingController controller;
   bool obscureText, autocorrect;
   Iterable<String> autofillHints;
   String enteredText;
-  IconData iconData = Icons.visibility_off_rounded;
+  IconData iconData;
 
   PasswordTextWidget({
     this.key,
@@ -16,9 +18,15 @@ class PasswordTextWidget extends StatelessWidget {
     this.autocorrect = false,
     this.obscureText = false,
     this.autofillHints,
+    this.iconData,
   }) : enteredText = controller.text;
 
+  _PasswordTextWidgetState createState() => _PasswordTextWidgetState();
+}
+
+class _PasswordTextWidgetState extends State<PasswordTextWidget> {
   Widget build(BuildContext context) {
+    SignInFormBloc bloc = Provider.of<SignInFormBloc>(context);
     return Container(
       height: 50.0,
       decoration: BoxDecoration(
@@ -34,12 +42,12 @@ class PasswordTextWidget extends StatelessWidget {
           SizedBox(width: 8.0),
           Expanded(
             child: TextField(
-              controller: this.controller,
-              obscureText: this.obscureText,
-              autofillHints: this.autofillHints,
+              controller: widget.controller,
+              obscureText: bloc.obscureText,
+              autofillHints: widget.autofillHints,
               textAlignVertical: TextAlignVertical.bottom,
               decoration: InputDecoration.collapsed(
-                hintText: this.hintText,
+                hintText: widget.hintText,
                 hintStyle: TextStyle(
                   color: Colors.black26,
                 ),
@@ -50,25 +58,13 @@ class PasswordTextWidget extends StatelessWidget {
             padding: const EdgeInsets.only(right: 12.0),
             child: GestureDetector(
               onTap: () {
-                changeVisibility();
+                bloc.changeVisibility();
               },
-              child: Icon(this.iconData),
+              child: Icon(bloc.visibilityIcon),
             ),
           ),
         ],
       ),
     );
-  }
-
-  void changeVisibility() {
-    setState() {
-      if (this.obscureText == true) {
-        this.obscureText = false;
-        this.iconData = Icons.visibility_rounded;
-      } else {
-        this.obscureText = true;
-        this.iconData = Icons.visibility_off_rounded;
-      }
-    }
   }
 }
