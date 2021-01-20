@@ -47,6 +47,7 @@ class MyApp extends StatelessWidget {
               ROUTE_PASSWORD_RECOVERY_PAGE: (context) => PasswordRecoveryPage(),
               ROUTE_DOCTOR_REG_PAGE: (context) => DoctorRegistrationPage(),
               ROUTE_HOME_PAGE: (context) => HomePage(),
+              ROUTE_VIDEO_CHAT_PAGE: (context) => VideoChatPage(),
             },
           );
         }
