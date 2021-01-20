@@ -7,6 +7,7 @@ import 'package:medizorg/ui/pages/home_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:medizorg/utils/strings.dart';
 import 'package:medizorg/ui/pages/password_recovery_page.dart';
+import 'package:medizorg/ui/pages/video_chat_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
