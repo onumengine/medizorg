@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:medizorg/blocs/molecules/health_article_bloc.dart';
-import 'package:medizorg/ui/organisms/home_screen.dart';
-import 'package:medizorg/ui/organisms/notifications_screen.dart';
-import 'package:medizorg/ui/organisms/profile_screen.dart';
+import 'package:medizorg/ui/screens/home_screen.dart';
+import 'package:medizorg/ui/screens/notifications_screen.dart';
+import 'package:medizorg/ui/screens/profile_screen.dart';
 import 'package:medizorg/utils/strings.dart';
 import 'package:provider/provider.dart';
 
