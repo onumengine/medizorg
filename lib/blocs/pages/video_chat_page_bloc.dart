@@ -14,6 +14,13 @@ class VideoChatPageBloc extends ChangeNotifier {
     notifyListeners();
   }
 
+  ClientRole _clientRole;
+  ClientRole get clientRole => _clientRole;
+  set role(ClientRole value) {
+    _clientRole = value;
+    notifyListeners();
+  }
+
   var _listOfParticipants = <int>[];
   List<int> get listOfParticipants => _listOfParticipants;
   set listOfParticipants(List<int> value) {
@@ -72,30 +79,30 @@ class VideoChatPageBloc extends ChangeNotifier {
     _engine.setEventHandler(
       RtcEngineEventHandler(
         error: (code) {
-            final info = 'onError: $code';
-            _callLogs.add(info);
+          final info = 'onError: $code';
+          _callLogs.add(info);
         },
         joinChannelSuccess: (channel, uid, elapsed) {
-            final info = 'onJoinChannel: $channel, uid: $uid';
-            _callLogs.add(info);
+          final info = 'onJoinChannel: $channel, uid: $uid';
+          _callLogs.add(info);
         },
         leaveChannel: (stats) {
-            _callLogs.add('onLeaveChannel');
-            _listOfParticipants.clear();
+          _callLogs.add('onLeaveChannel');
+          _listOfParticipants.clear();
         },
         userJoined: (uid, elapsed) {
-            final info = 'userJoined: $uid';
-            _callLogs.add(info);
-            _listOfParticipants.add(uid);
+          final info = 'userJoined: $uid';
+          _callLogs.add(info);
+          _listOfParticipants.add(uid);
         },
         userOffline: (uid, elapsed) {
-            final info = 'userOffline: $uid';
-            _callLogs.add(info);
-            _listOfParticipants.remove(uid);
+          final info = 'userOffline: $uid';
+          _callLogs.add(info);
+          _listOfParticipants.remove(uid);
         },
         firstRemoteVideoFrame: (uid, width, height, elapsed) {
-            final info = 'firstRemoteVideo: $uid $width x $height';
-            _callLogs.add(info);
+          final info = 'firstRemoteVideo: $uid $width x $height';
+          _callLogs.add(info);
         },
       ),
     );
