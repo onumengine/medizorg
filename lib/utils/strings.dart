@@ -12,6 +12,9 @@ const ERROR_MESSAGE_WEAK_PASSWORD = 'weak-password';
 const ERROR_MESSAGE_WRONG_PASSWORD = 'wrong-password';
 // FIREBASE FEEDBACK MESSAGES
 const FEEDBACK_SUCCESS = 'success';
+const FEEDBACK_APP_ID_MISSING =
+    'App ID missing. Please provide your app ID in settings.dart';
+const FEEDBACK_AGORA_NOT_STARTING = 'Agora engine is not starting';
 // HINT TEXTS
 const HINT_TEXT_EMAIL = 'Email';
 const HINT_TEXT_CONFIRM_PASSWORD = 'Confirm Password';

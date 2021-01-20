@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medizorg/blocs/molecules/health_article_bloc.dart';
+import 'package:medizorg/blocs/organisms/health_article_bloc.dart';
+import 'package:medizorg/blocs/pages/home_page_bloc.dart';
 import 'package:medizorg/ui/screens/home_screen.dart';
 import 'package:medizorg/ui/screens/notifications_screen.dart';
 import 'package:medizorg/ui/screens/profile_screen.dart';
@@ -13,7 +14,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   int _currentIndex = 0;
-  
+
   final _listOfScreens = <Widget>[
     HomeScreen(),
     NotifScreen(),
@@ -25,7 +26,10 @@ class _HomePageState extends State<HomePage> {
       providers: [
         ChangeNotifierProvider<HealthArticleBloc>.value(
           value: HealthArticleBloc(),
-        )
+        ),
+        ChangeNotifierProvider<HomePageBloc>.value(
+          value: HomePageBloc(),
+        ),
       ],
       child: Scaffold(
         body: SafeArea(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medizorg/blocs/molecules/health_article_bloc.dart';
+import 'package:medizorg/blocs/organisms/health_article_bloc.dart';
 import 'package:provider/provider.dart';
 
 class HealthArticle extends StatefulWidget {
