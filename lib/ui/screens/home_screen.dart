@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medizorg/ui/molecules/health_article.dart';
+import 'package:medizorg/ui/organisms/health_article.dart';
 import 'package:medizorg/ui/molecules/search_bar.dart';
 import 'package:medizorg/ui/molecules/service_item.dart';
 import 'package:medizorg/utils/strings.dart';
