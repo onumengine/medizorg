@@ -23,6 +23,7 @@ const ROUTE_PASSWORD_RECOVERY_PAGE = '/password_recovery_page';
 const ROUTE_HOME_PAGE = '/home_page';
 const ROUTE_SIGN_IN_PAGE = '/sign_in_page';
 const ROUTE_SIGN_UP_PAGE = '/sign_up_page';
+const ROUTE_VIDEO_CHAT_PAGE = '/video_chat_page';
 // TEXTS
 const TEXT_BACK = 'Back';
 const TEXT_CALENDAR = 'Calendar';
