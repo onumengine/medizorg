@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:agora_rtc_engine/rtc_engine.dart';
 import 'package:agora_rtc_engine/rtc_local_view.dart' as RtcLocalView;
 import 'package:agora_rtc_engine/rtc_remote_view.dart' as RtcRemoteView;
+import 'package:medizorg/blocs/pages/video_chat_page_bloc.dart';
+import 'package:provider/provider.dart';
 
 class VideoChatPage extends StatefulWidget {
   final String channelName;
@@ -19,7 +21,20 @@ class VideoChatPage extends StatefulWidget {
 }
 
 class _VideoChatPageState extends State<VideoChatPage> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
-    return Scaffold();
+    var viewModel = context.watch<VideoChatPageBloc>();
+    return Scaffold(
+      body: Container(),
+    );
   }
 }
