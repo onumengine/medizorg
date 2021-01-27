@@ -4,7 +4,7 @@ import 'package:medizorg/blocs/organisms/health_article_bloc.dart';
 import 'package:medizorg/blocs/organisms/sign_in_form_bloc.dart';
 import 'package:medizorg/blocs/organisms/sign_up_form_bloc.dart';
 import 'package:medizorg/blocs/pages/home_page_bloc.dart';
-import 'package:medizorg/blocs/pages/video_chat_page_bloc.dart';
+import 'package:medizorg/blocs/pages/video_call_page_bloc.dart';
 import 'package:medizorg/ui/pages/doctor_registration_page.dart';
 import 'package:medizorg/ui/pages/sign_in_page.dart';
 import 'package:medizorg/ui/pages/sign_up_page.dart';
@@ -12,7 +12,7 @@ import 'package:medizorg/ui/pages/welcome_page.dart';
 import 'package:medizorg/ui/pages/home_page.dart';
 import 'package:medizorg/utils/strings.dart';
 import 'package:medizorg/ui/pages/password_recovery_page.dart';
-import 'package:medizorg/ui/pages/video_chat_page.dart';
+import 'package:medizorg/ui/pages/video_call_page.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
               ChangeNotifierProvider<SignUpFormBloc>.value(value: SignUpFormBloc(),),
               ChangeNotifierProvider<HealthArticleBloc>.value(value: HealthArticleBloc(),),
               ChangeNotifierProvider<HomePageBloc>.value(value: HomePageBloc(),),
-              ChangeNotifierProvider<VideoChatPageBloc>.value(value: VideoChatPageBloc(),),
+              ChangeNotifierProvider<VideoCallPageBloc>.value(value: VideoCallPageBloc(),),
             ],
             child: MaterialApp(
               title: TEXT_MEDIZORG,
@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
                     PasswordRecoveryPage(),
                 ROUTE_DOCTOR_REG_PAGE: (context) => DoctorRegistrationPage(),
                 ROUTE_HOME_PAGE: (context) => HomePage(),
-                ROUTE_VIDEO_CHAT_PAGE: (context) => VideoChatPage(),
+                ROUTE_VIDEO_CHAT_PAGE: (context) => VideoCallPage(),
               },
             ),
           );

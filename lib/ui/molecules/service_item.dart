@@ -7,11 +7,7 @@ class ServiceItem extends StatelessWidget {
   ServiceItem({this.iconData, this.text});
 
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        print('Pressed ${this.text}');
-      },
-      child: Container(
+    return Container(
         width: 100.0,
         height: 100.0,
         decoration: BoxDecoration(
@@ -28,7 +24,6 @@ class ServiceItem extends StatelessWidget {
             Text(this.text),
           ],
         ),
-      ),
-    );
+      );
   }
 }

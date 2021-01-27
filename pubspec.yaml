@@ -35,6 +35,7 @@ dependencies:
   http: "0.12.2"
   agora_rtc_engine: "3.2.1"
   permission_handler: "5.0.1+1"
+  quickblox_sdk: "0.3.3-alpha"
 
 dev_dependencies:
   flutter_test:
