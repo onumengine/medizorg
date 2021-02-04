@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:medizorg/blocs/organisms/sign_up_form_bloc.dart';
 import 'package:medizorg/ui/molecules/text_widget.dart';
 import 'package:medizorg/utils/strings.dart';
-import 'package:medizorg/blocs/organisms/sign_up_form_bloc.dart';
+import 'package:medizorg/ui/molecules/password_text_widget.dart';
 import 'package:provider/provider.dart';
 
 class SignUpForm extends StatefulWidget {
@@ -82,22 +83,20 @@ class _SignUpFormState extends State<SignUpForm> {
           SizedBox(
             height: 20.0,
           ),
-          TextWidget(
+          PasswordTextWidget(
             hintText: HINT_TEXT_PASSWORD,
             key: passwordFieldKey,
             controller: passwordTextController,
-            obscureText: true,
-            autocorrect: false,
+            iconData: signUpFormBloc.visibilityIcon,
           ),
           SizedBox(
             height: 20.0,
           ),
-          TextWidget(
-            hintText: HINT_TEXT_CONFIRM_PASSWORD,
+          PasswordTextWidget(
+            hintText: HINT_TEXT_PASSWORD,
             key: confirmPasswordFieldKey,
-            controller: confirmPasswordTextController,
-            obscureText: true,
-            autocorrect: false,
+            controller: passwordTextController,
+            iconData: signUpFormBloc.visibilityIcon,
           ),
           SizedBox(
             height: 4.0,

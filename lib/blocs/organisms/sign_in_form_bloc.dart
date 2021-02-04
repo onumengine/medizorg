@@ -67,8 +67,17 @@ class SignInFormBloc extends ChangeNotifier {
 
   */
 
-  signInUser(String email, String password) async {
-    Authenticator.signInUser(email, password);
+  String attemptSignIn(BuildContext context, String email, String password) {
+    String result = signInUser(email, password);
+    if (result == FEEDBACK_SUCCESS) {
+      openHomePage(context);
+    } else {
+      snackify(context, result);
+    }
+  }
+
+  String signInUser(String email, String password) {
+    return Authenticator.signInUser(email, password).toString();
   }
 
   openHomePage(BuildContext context) {

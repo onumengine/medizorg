@@ -146,7 +146,7 @@ class _SignInFormState extends State<SignInForm> {
                     TEXT_SIGN_UP_UPPERCASE,
                     style: TextStyle(color: Colors.blue),
                   ),
-                )
+                ),
               ],
             ),
           ],

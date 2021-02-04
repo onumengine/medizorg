@@ -4,15 +4,20 @@ import 'package:medizorg/utils/strings.dart';
 class Authenticator {
   static FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
-  static signInUser(String email, String password) async {
+  static Future<String> signInUser(String email, String password) async {
     try {
       await firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
+      return FEEDBACK_SUCCESS;
     } on FirebaseAuthException catch (e) {
       if (e.code == ERROR_MESSAGE_USER_NOT_FOUND) {
         print('No user found for that email.');
+        return ERROR_MESSAGE_USER_NOT_FOUND;
       } else if (e.code == ERROR_MESSAGE_WRONG_PASSWORD) {
         print('Wrong password provided for that user.');
+        return ERROR_MESSAGE_WRONG_PASSWORD;
+      } else {
+        return e.code;
       }
     }
   }

@@ -3,6 +3,30 @@ import 'package:medizorg/auth_module/authenticator.dart';
 import 'package:medizorg/auth_module/validator.dart';
 
 class SignUpFormBloc extends ChangeNotifier {
+  bool _obscureText = true;
+  bool get obscureText => _obscureText;
+  set obscureText(bool value) {
+    _obscureText = value;
+    notifyListeners();
+  }
+
+  IconData _visibilityIcon = Icons.visibility_off_rounded;
+  IconData get visibilityIcon => _visibilityIcon;
+  set visibilityIcon(IconData icon) {
+    _visibilityIcon = icon;
+    notifyListeners();
+  }
+
+  changeVisibility() {
+    if (obscureText == true) {
+      obscureText = false;
+      visibilityIcon = Icons.visibility_rounded;
+    } else {
+      obscureText = true;
+      visibilityIcon = Icons.visibility_off_rounded;
+    }
+  }
+
   bool emailIsEmpty(String email) {
     return Validator.emailIsEmpty(email);
   }

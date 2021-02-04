@@ -19,7 +19,7 @@ const FEEDBACK_AGORA_NOT_STARTING = 'Agora engine is not starting';
 const HINT_TEXT_EMAIL = 'Email';
 const HINT_TEXT_CONFIRM_PASSWORD = 'Confirm Password';
 const HINT_TEXT_PASSWORD = 'Password';
-const HINT_TEXT_SEARCH_DOCTORS = 'Search dsoctors';
+const HINT_TEXT_SEARCH_DOCTORS = 'Search doctors';
 // ROUTES
 const ROUTE_DOCTOR_REG_PAGE = '/doctor_registration_page';
 const ROUTE_PASSWORD_RECOVERY_PAGE = '/password_recovery_page';
