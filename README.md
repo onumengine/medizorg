@@ -18,6 +18,6 @@ This app is currently in development.
 
 The only screenshots I'm free to disclose are:
 
-<img src="lib/appScreenshots/signinform.png" alt="SignInPage" width="200">
+<img src="lib/appScreenshots/signninform.png" alt="SignInPage" width="200">
 <img src="lib/appScreenshots/signupform.png" alt="SignInPage" width="200">
 <img src="lib/appScreenshots/homepage.png" alt="SignInPage" width="200">
